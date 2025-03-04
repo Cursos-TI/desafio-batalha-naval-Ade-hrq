@@ -4,7 +4,46 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
 
+#include <stdio.h>
+void tab(int tabuleiro[10][10]){
+
+    printf("  ");
+//Fileira de Letras em cima
+        for(char letra = 'A'; letra <= 'J'; letra++){
+            printf("%2c", letra);
+        }
+//Fileira de npumeros na lateral
+            for(int i = 0; i < 10; i++){
+            printf("\n%2d", i + 1);
+            
+                for(int j = 0; j < 10; j++)
+                printf("%2d", tabuleiro[i][j]);
+            }
+            printf("\n");
+        
+    
+}
+
 int main() {
+    int tabuleiro[10][10];
+
+// Preenchendo o tabuleiro com zeros usando loops
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+        tabuleiro[i][j] = 0;
+        }
+//Exibir navio utilizando o numero 3
+   } for(int i = 3; i < 6; i++){
+    tabuleiro[i][7] = 3;
+}
+    
+        for(int j = 3; j < 6; j++){
+        tabuleiro[5][j] = 3;
+    }
+//Chama o primeiro código para completar o tabuleiro
+    tab(tabuleiro);
+}
+
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
